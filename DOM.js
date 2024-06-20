@@ -30,6 +30,14 @@ function clicou(){
     ul.appendChild(newLi); // Adiciona o elemento
     
     ul.prepend(newLi); // Adiciona o elemento no início
+
+    const newButton = document.createElement("button");
+    newButton.innerText = "Clique aqui";
+
+    ul.after(newButton);
+
+    ul.before(""); // add antes
+    ul.after(""); // add depois
 }
 
 let botao = document.querySelector(".botao")
@@ -38,3 +46,39 @@ botao.addEventListener("click", clicou); // escutador de eventos
 // botao.addEventListener("click", () => {
 //     clicou();
 // });
+
+
+function clicou2(){
+    const ul = teste.querySelector("ul");
+    let newUl = document.createElement("ul");
+
+    for (let i = 0; i < 5; i++) {
+        let newLi = document.createElement("li");
+        newLi.innerText = `Item ${i + 1}`;
+        newUl.appendChild(newLi);
+    }
+
+    ul.after(newUl);
+}
+
+// pegar atributos dos elementos
+
+function monstrar_senha(){
+    const input = document.querySelector("input");
+
+    console.log(input.getAttribute("placeholder")); // Pega o valor do atributo
+
+    if (input.hasAttribute("placeholder")) { // Verifica se tem o atributo
+        console.log("Tem o atributo");
+    } else {
+        console.log("Não tem o atributo");
+    }
+
+    input.setAttribute("placeholder", "Digite algo"); // Altera o atributo
+
+    if (input.getAttribute("type") == "text"){
+        input.setAttribute("type", "password")
+    } else {
+        input.setAttribute("type", "text"); // Altera o atributo
+    }
+}
