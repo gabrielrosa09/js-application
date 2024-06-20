@@ -65,6 +65,7 @@ function clicou2(){
 
 function monstrar_senha(){
     const input = document.querySelector("input");
+    const button = document.querySelector("button");
 
     console.log(input.getAttribute("placeholder")); // Pega o valor do atributo
 
@@ -78,7 +79,21 @@ function monstrar_senha(){
 
     if (input.getAttribute("type") == "text"){
         input.setAttribute("type", "password")
+        button.innerText = "Mostrar Senha"
     } else {
         input.setAttribute("type", "text"); // Altera o atributo
+        button.setAttribute("value", "Mostrar Senha")
+        button.innerText = "Ocultar Senha"
+    }
+}
+
+function click_button(){
+    const button = document.querySelector("button");
+
+    button.classList.toggle("azul"); // Adiciona ou remove uma classe
+    
+    if(button.classList.contains("azul")){
+        button.classList.remove("azul"); // Remove uma classe
+        button.classList.add("verde"); // Adiciona uma classe    
     }
 }
