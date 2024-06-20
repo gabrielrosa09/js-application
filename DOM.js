@@ -17,10 +17,19 @@ function clicou(){
     ul.innerHTML = "<li>Item alterado</li>"; // Pega o conteúdo do elemento pode usado pra consultar. altera
     ul.innerHTML += "<li>Item alterado</li>"; // Pega o conteúdo do elemento pode usado pra consultar. adiciona
 
-    ul.children[0].innerHTML = "<li>Item alterado</li>"; // Pega o conteúdo do elemento pode usado pra consultar. altera
+    ul.children[0].innerHTML = "<li>Item alterado</li>"; // Pega o conteúdo do elemento pode usado pra consultar. altera e substitui tudo
     ul.children[0].innerText = "<li>Item alterado</li>"; // Pega o conteúdo do elemento pode usado pra consultar. altera o texto
     console.log(ul.outerHTML); // Pega o conteudo de fora, pouco utilizado
+
+    ul.children[0].append("(alterado)"); // Adiciona o elemento no final, mas só funciona com texto
+    ul.children[0].remove(); // Remove o elemento
+
+    let newLi = document.createElement("li");
+    newLi.innerText = "Item adicionado";
+
+    ul.appendChild(newLi); // Adiciona o elemento
     
+    ul.prepend(newLi); // Adiciona o elemento no início
 }
 
 let botao = document.querySelector(".botao")
