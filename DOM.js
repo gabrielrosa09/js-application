@@ -97,3 +97,22 @@ function click_button(){
         button.classList.add("verde"); // Adiciona uma classe    
     }
 }
+
+function apertou(){
+    console.log("Apertou");
+}
+
+function segurou(){
+    console.log("Segurou");
+}
+
+function soltou(e){ 
+    console.log("Soltou" + e.code); // Pega o código da tecla (mais detalhado)
+    console.log("Soltou" + e.key); // Pega o valor da tecla
+    console.log("SHIFT?" + e.shiftKey); // Pega o código da tecla
+    console.log("CTRL?" + e.ctrlKey); // Pega o código da tecla
+    console.log("ALT?" + e.altKey); // Pega o código da tecla
+}
+
+const input = document.querySelector("input");
+input.addEventListener("keyup", soltou);
